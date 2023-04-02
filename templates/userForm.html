@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<form  >
+    {% comment %} {%  csrf_token %} {% endcomment %}
+    <div>
+        <div class='pt-3'>
+            <input type='text' name='val1' placeholder='Value1' class=''>
+        </div>
+        <div>
+            <input type='text' name='val2' placeholder='Value2'>
+        </div>
+        <div>
+            <button type='submit' value='Save'>Save</button>
+        </div>
+        <div>
+            <input value='{{n1}}'>
+            <input value='{{n2}}'>
+            <input value='{{finalSum}}'>
+        </div>
+    </div>
+    
+</form>
+
+{% endblock %}

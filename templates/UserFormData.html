@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method='POST' class='container p-5'  action="{% url 'submitformdata' %}">
+    {% csrf_token %}
+    <div class='pt-3'>
+        <input type='text' name='Name' peceholder="Full Name">
+    </div>
+    <div class='pt-3'>
+        <input type='email' name='Email' peceholder="Email">
+    </div>
+    <div class='pt-3'>
+        <input type='date' name='DOB' peceholder="DOB">
+    </div>
+    <div class='pt-3'>
+        <input type='number' name='Mobile' peceholder="Mobile">
+    </div>
+    <div class='pt-3'>
+        <button type='submit' >SAVE</button>
+    </div>
+    <div>{{Name}}</div>
+    <div>{{Email}}</div>
+    <div><input value={{DOB}}></div>
+    <div><input value={{Mobile}}></div>
+
+</form>
+
+{% endblock  %}

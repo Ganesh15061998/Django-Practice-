@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h1 class = 'mail'>First Project</h1>
+        <br><br> 
+        {% comment %} Simple variable Data Print......... {% endcomment %}
+        <h4> Print Data of Simple Veriable</h4>
+        <h5>{{name}}</h5>
+        <h6>{{city}}</h6>
+
+        <h4>Print Data From List</h4> 
+        <h2>{{lit}}</h2> 
+        {% comment %} List Data print...................... {% endcomment %}
+        {% for n in lit %}
+        <div>{{forloop.counter}}{{n}}</div>
+        {% endfor %}
+
+         {% comment %} Dict Data Print................ {% endcomment %}
+         <br>
+         <h4>Print Data From Dict</h4>
+         <table border='1' cellpdding='10'>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+            {% for d in student_data %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.city}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        {% comment %} If Else.......................... {% endcomment %}
+        <h4>if else </h4>
+        {% if linst2|length > 0 %}
+            {% for no in linst2 %}
+                {% comment %} {% if no > 5 %} {% endcomment %}
+                <div>{{no}}</div>
+                {% comment %} {% endif %} {% endcomment %}
+            {% endfor %}
+        {% else %}
+            nO Data
+        {% endif %}
+        
+         {% if linst2|length > 0%}
+            <h2>List length is greter then zero</h2>
+        {% else %}
+            <h1>List Length is Less Then Zero</h1>
+        {% endif %}
+    
+{% endblock %}
